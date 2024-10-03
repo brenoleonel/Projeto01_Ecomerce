@@ -1,7 +1,8 @@
 import { Router } from "express"
+import UsuarioController from "../Controllers/usuario-controller"
 
 const routes = Router()
 
-routes.get('/')
+routes.post('/cadastro', new UsuarioController() as any)
 
 export default routes
