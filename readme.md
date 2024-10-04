@@ -1,22 +1,23 @@
-# DOCUMENTACAO PROJETO ECOMERCE
+# DOCUMENTAÇÃO DO PROJETO E-COMMERCE
 
-## BIBLIOTECAS DEV
+## BIBLIOTECAS DE DESENVOLVIMENTO
 @TYPES/BCRYPT, @TYPES/EXPRESS, @TYPES/PG, NODEMON, TS-NODE, TYPESCRIPT
 
-## BIBLIOTECA DEP
+## BIBLIOTECAS DE DEPENDÊNCIA
 @TYPES/JSONWEBTOKEN, @TYPES/UUID, AXIOS, BCRYPT, DOTENV, EXPRESS, JSONWEBTOKEN, PG, UUID 
 
-## EXPLICACAO
-Estou desenvolvendo uma API para meus estudos, e aplicando todo conhecimento que possuo de aprendizado da cubos, pretendo usar essa API tambem para esse proximo modulo que sera HTML, CSS, assim terei uma API funcional assim que o curso concluir, pretendo me aperfeicoar totalmente no backend.
+## EXPLICAÇÃO
+Estou desenvolvendo uma API para meus estudos e aplicando todo o conhecimento que possuo adquirido no curso da Cubos. Pretendo usar essa API também neste próximo módulo, que será de HTML e CSS, assim terei uma API funcional assim que o curso for concluído. Meu objetivo é me aperfeiçoar totalmente no backend.
 
 ## COMO USAR A API?
-Primeiramente va ate o local onde fez o `git clone`, apos isso abra o Terminal por la, assim voce estara no local do arquivo e ficara facil executar esses comandos:
+Primeiramente, vá até o local onde você fez o `git clone`. Após isso, abra o terminal lá, assim você estará no local do arquivo e ficará fácil executar os comandos:
 
-o primeiro vai ser `npm i` ou `npm install` da no mesmo, assim vai ser instalado toda a dependencia do projeto.
+O primeiro comando será `npm i` ou `npm install`, ambos funcionam da mesma forma, e assim serão instaladas todas as dependências do projeto.
 
-vou tambem deixar vario um arquivo APAGAR.env para que seja configurado para acessar a API.. Dentro do APAGAR.env coloque - 
+Vou também deixar um arquivo chamado `APAGAR.env`, que deve ser configurado para acessar a API. Dentro do `APAGAR.env`, coloque:
+
 ```json 
-lembrando que precisa editar o nome do arquivo e remover o APAGAR
+lembrando que é necessário editar o nome do arquivo e remover o "APAGAR"
 ```
  
 ```ts
@@ -31,9 +32,10 @@ PG_DATABASE= ecommerce_db           // Estou deixando tudo padrao para teste
 SECRET_JWT=1pOGVe9nhQ6LUDtARnGKo // Senha para poder criar o token 
 ```
 
-tambem vou deixar vazio um arquivo chamado APAGAR.docker-compose.yml - 
+Também vou deixar um arquivo vazio chamado APAGAR.docker-compose.yml:
+
 ```json 
-lembrando que precisa editar o nome do arquivo e remover o APAGAR
+lembrando que é necessário editar o nome do arquivo e remover o "APAGAR"
 ```
 
 ```ts
@@ -51,19 +53,19 @@ services:
 
 ```
 
-para rodar o docker-compose usar o comando no terminal da pasta onde se encontra os arquivos, comando: `docker compose up -d` e quando quiser desligar o conteiner `docker compose down` lembrando que precisa do Docker aberto no Desktop
+Para rodar o Docker Compose, use o comando no terminal da pasta onde se encontram os arquivos: `docker compose up -d`.  Quando quiser desligar o contêiner, use `docker compose down`. Lembre-se de que o Docker precisa estar aberto no desktop.
 
 para inicializar a API digite o comando `npm run dev` e fica a sua escolha, usar o Postman ou Insonia para testar a API
 
 
 ## DESENVOLVIMENTO
 
-1. Criar com Navicat toda estrutuda de banco de dados para poder estiliza-la na API.
+1. Criar, com o Navicat, toda a estrutura do banco de dados para poder estilizá-la na API.
 
-2. criar uma pagina de login, quem tiver acesso a essa parte podera manipular todo o sistema
+2. Criar uma página de login. Quem tiver acesso a essa parte poderá manipular todo o sistema.
 
-3. vamos cadastrar um banco de dados para usuario e tambem para produtos
+3. Vamos cadastrar um banco de dados para usuários e também para produtos.
 
-4. vamos desenvolver a rota da api para login, cadastro de produto, remover produto, venda, desconto do produto
+4. Vamos desenvolver as rotas da API para login, cadastro de produto, remoção de produto, venda e desconto de produto.
 
-5. vamos por uma integracao a outra api que faz pagamento
+5. Vamos implementar uma integração com outra API que realiza pagamentos.
