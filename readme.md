@@ -64,7 +64,7 @@ para inicializar a API digite o comando `npm run dev` e fica a sua escolha, usar
 
 2. Criar uma página de login. Quem tiver acesso a essa parte poderá manipular todo o sistema.
 
-3. Vamos cadastrar um banco de dados para usuários e também para produtos.
+3. Criar um middleware para proteger a roda depois do longin.
 
 4. Vamos desenvolver as rotas da API para login, cadastro de produto, remoção de produto, venda e desconto de produto.
 
