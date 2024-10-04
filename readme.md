@@ -14,7 +14,10 @@ Primeiramente va ate o local onde fez o `git clone`, apos isso abra o Terminal p
 
 o primeiro vai ser `npm i` ou `npm install` da no mesmo, assim vai ser instalado toda a dependencia do projeto.
 
-vou tambem deixar vario um arquivo APAGAR.env para que seja configurado para acessar a API.. Dentro do APAGAR.env coloque - ```json lembrando que precisa editar o nome do arquivo e remover o APAGAR```
+vou tambem deixar vario um arquivo APAGAR.env para que seja configurado para acessar a API.. Dentro do APAGAR.env coloque - 
+```json 
+lembrando que precisa editar o nome do arquivo e remover o APAGAR
+```
  
 ```ts
 PORT=             // Geralmente usamos a porta 3000/3001 etc para testes
@@ -28,7 +31,10 @@ PG_DATABASE= ecommerce_db           // Estou deixando tudo padrao para teste
 SECRET_JWT=1pOGVe9nhQ6LUDtARnGKo // Senha para poder criar o token 
 ```
 
-tambem vou deixar vazio um arquivo chamado APAGAR.docker-compose.yml - ```json lembrando que precisa editar o nome do arquivo e remover o APAGAR```
+tambem vou deixar vazio um arquivo chamado APAGAR.docker-compose.yml - 
+```json 
+lembrando que precisa editar o nome do arquivo e remover o APAGAR
+```
 
 ```ts
 services:
