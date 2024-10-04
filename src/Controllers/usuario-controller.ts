@@ -6,7 +6,7 @@ import { hash } from "bcrypt";
 
 export default class UsuarioController {
 
-    async createUsuario(req: Request, res: Response) {
+    async createUsuario (req: Request, res: Response) {
         const { 
             nome, 
             email, 
@@ -47,7 +47,7 @@ export default class UsuarioController {
 
                 await usuarioRepositories.createUser(usuario)
 
-                return res.status(201).json({message: 'Usuário criado com sucesso'})
+                return res.status(201).json({message: `Usuário ${usuario.nome} criado com sucesso`})
 
 
             } catch (error) {
@@ -58,5 +58,5 @@ export default class UsuarioController {
             }
     }
 
-
+ 
 }

@@ -16,6 +16,11 @@ export default class Usuario {
     constructor(props: TUsuario) {
         this.id = props.id ?? randomUUID()
         this.nome = props.nome
+
+        if(!this.validateEmail(props.email)) {
+            throw new Error('Email inválido')
+        }
+        
         this.email = props.email
         this.senha = props.senha
         this.telefone = props.telefone

@@ -3,6 +3,6 @@ import UsuarioController from "../Controllers/usuario-controller"
 
 const routes = Router()
 
-routes.post('/cadastro', new UsuarioController() as any)
+routes.post('/cadastro', new UsuarioController().createUsuario)
 
 export default routes

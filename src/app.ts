@@ -1,9 +1,9 @@
 import "dotenv/config"
-import express, { Application } from "express"
+import express from "express"
 import routes from "./Routes/routes"
 
 
-const app: Application = express()
+const app = express()
 
 app.use(express.json())
 app.use(routes)
