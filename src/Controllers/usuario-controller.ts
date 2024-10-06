@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
 import UserRepositories from "../Repositories/user-repositories";
 import Usuario from "../models/usuario";
-import { hash } from "bcrypt";
+import { compare, hash } from "bcrypt";
+import { sign } from "jsonwebtoken";
 
 
 export default class UsuarioController {
@@ -56,6 +57,49 @@ export default class UsuarioController {
                     message: erro.message
                 })
             }
+    }
+
+    async loginUsuario (req: Request, res: Response) {
+        const { email, senha } = req.body
+
+        if(!email || !senha) {
+            return res.status(400).json({
+                message: 'Todos os campos são obrigatórios'
+            })
+        }
+
+        try {
+            const userRepo = new UserRepositories()
+
+            const user = await userRepo.findUser(email)
+
+            if(!user) {
+                return res.status(404).json({
+                    message: 'E-mail ou senha inválidos'
+                })
+            }
+
+            const checkSenha = await compare(senha, user.senha)
+
+            if(!checkSenha) {
+                return res.status(400).json({
+                    mesage: 'E-mail ou senha inválidos'
+                })
+            }
+
+            const token = sign({ id: user.id}, process.env.SECRET_JWT || '', {
+                expiresIn: '20m'
+            })
+
+            return res.json({ token })
+            
+        } catch (error) {
+            const erro = error as Error
+            return res.status(400).json({
+                message: erro.message
+            })
+        }
+
     }
 
  

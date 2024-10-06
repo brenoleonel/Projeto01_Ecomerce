@@ -34,4 +34,10 @@ export default class UserRepositories {
         return rows.length > 0
     }
 
+    async findUser(email: string) {
+        const query = `select * from usuarios where email = $1`;
+        const { rows } = await pool.query(query, [email])
+        return rows[0]
+    }
+
 }
