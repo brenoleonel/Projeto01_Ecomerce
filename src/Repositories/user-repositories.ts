@@ -40,4 +40,16 @@ export default class UserRepositories {
         return rows[0]
     }
 
-}
+    async findUserById(id: string) {
+        const query = `select * from usuarios where id = $1`;
+        const { rows } = await pool.query(query, [id])
+        return rows[0]
+    }
+
+    async findAllUsers() {
+        const query = `select * from usuarios`;
+        const { rows } = await pool.query(query)
+        return rows
+    }
+
+} 

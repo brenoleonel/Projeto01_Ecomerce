@@ -14,7 +14,8 @@ export default class UsuarioController {
             senha, 
             telefone, 
             endereco, 
-            tipo_usuario, 
+            tipo_usuario,
+            data_aniversario 
             } = req.body
 
             if(!nome || !email || !senha) {
@@ -40,7 +41,9 @@ export default class UsuarioController {
                     senha,
                     telefone,
                     endereco,
-                    tipo_usuario
+                    tipo_usuario,
+                    data_criacao: new Date().toISOString(),
+                    data_aniversario 
                 })
 
                 const hashSenha = await hash(senha, 10)
@@ -100,6 +103,38 @@ export default class UsuarioController {
             })
         }
 
+    }
+
+    async getUsuario (req: Request, res: Response) { 
+        const { id } = req.params
+
+        try {
+            const userRepo = new UserRepositories()
+
+            if(id) {
+                const usuario = await userRepo.findUserById(id)
+
+                if(!usuario) {
+                    return res.status(404).json({
+                        message: 'Usuário não encontrado'
+                    })
+                }
+
+                const { senha, ...usuarioSemSenha } = usuario
+                return res.json(usuarioSemSenha)
+            }
+
+            const usuarios = await userRepo.findAllUsers()
+            const usuariosSemSenha = usuarios.map(({ senha, ...usuarioSemSenha}) => usuarioSemSenha)
+
+            return res.json(usuariosSemSenha)
+            
+        } catch (error) {
+            const erro = error as Error
+                return res.status(400).json({
+                    message: erro.message
+                })
+        }
     }
 
  
