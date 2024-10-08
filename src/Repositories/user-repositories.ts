@@ -52,4 +52,15 @@ export default class UserRepositories {
         return rows
     }
 
+    async editarUsuario(id: string, props: Omit <TUsuario, "senha">) {
+        const query = `update usuarios set nome = $1, email = $2, telefone = $3, tipo_usuario = $4, data_aniversario = $5 where id = $6 returning *`;
+        const { rows } = await pool.query(query, [props.nome, props.email, props.telefone, props.tipo_usuario, props.data_aniversario, id])
+        return rows[0]
+    }
+
+    async deletarUsuario(id: string) {
+        const query = `delete from usuarios where id = $1`;
+        await pool.query(query, [id])
+    }
+
 } 

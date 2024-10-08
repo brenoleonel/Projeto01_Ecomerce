@@ -10,8 +10,8 @@ routes.post('/login', new UsuarioController().loginUsuario)
 routes.use(authMiddleware)
 
 routes.get('/usuarios/:id?', new UsuarioController().getUsuario)
-// routes.put('/usuarios/:id', new UsuarioController().updateUsuario)
-// routes.delete('/usuarios/:id', new UsuarioController().deleteUsuario)
+routes.put('/usuarios/:id', new UsuarioController().updateUsuario)
+routes.delete('/usuarios/:id', new UsuarioController().deleteUsuario)
 
 // routes.get('/produtos/:id?', new ProdutosController().getProdutosById)
 // routes.post('/produtos', new ProdutosController().createProdutos)
