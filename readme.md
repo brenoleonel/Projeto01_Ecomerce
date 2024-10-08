@@ -62,7 +62,7 @@ para inicializar a API digite o comando `npm run dev` e fica a sua escolha, usar
 
 1. Criar, com o Navicat, toda a estrutura do banco de dados para poder estilizá-la na API.
 
-2. Criar uma página de login. Quem tiver acesso a essa parte poderá manipular todo o sistema.
+2. Criar uma rota de cadastro e uma rota de login. Quem tiver acesso a essa parte poderá manipular todo o sistema.
 
 3. Criar um middleware para proteger a roda depois do longin.
 
